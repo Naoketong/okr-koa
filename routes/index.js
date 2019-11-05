@@ -9,8 +9,10 @@ const todoController = require('./../controllers/todo.js')
 
 
 router.get('/test', testController.test)
-router.get('/todo',todoController.all)
+router.get('/todo',todoController.show)
 router.post('/todo',todoController.insert)
+router.put('/todo/:id',todoController.update)
+router.delete('/todo/:id',todoController.delete)
 
 
 
