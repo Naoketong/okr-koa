@@ -18,10 +18,11 @@ const todocontroller = {
 			ctx.state.data.message = '缺少必要参数'
 			return
 		}
-		
 		let todo = await Todo.insert({content, start_at})
+		let id = todo[0];
 		ctx.state.code = 200;
 		ctx.state.data.message = '添加成功';
+		ctx.state.data.id = id;
 	},
 	delete: async function(ctx, next){
 		let id = ctx.params.id;
@@ -38,8 +39,7 @@ const todocontroller = {
 		let todo = await Todo.update(id,params)
 		ctx.state.code = 200;
 		ctx.state.data.message = '修改成功';
-
-	}
+	},
 
 }
 module.exports = todocontroller;
