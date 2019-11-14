@@ -5,7 +5,11 @@ const configs = {
     user: 'root',
     password: '',
     database: 'okr'
-  }
+  },
+  miniapp: {
+    appid: 'wx5651e6a11cf8248b',
+    secret: '2aafd1af8ddeebb557a6f06f9114c11b',
+  },
 }
 
 module.exports = configs

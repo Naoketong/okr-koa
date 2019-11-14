@@ -9,6 +9,7 @@ const objController = require('./../controllers/objective.js')
 const okrController = require('./../controllers/okr.js')
 
 
+router.post('/login', userController.login)
 
 router.get('/test', testController.test)
 router.get('/todo',todoController.show)
@@ -16,10 +17,12 @@ router.post('/todo',todoController.insert)
 router.put('/todo/:id',todoController.update)
 router.delete('/todo/:id',todoController.delete)
 
-router.post('/obj',objController.insert)
-router.delete('/obj/:id',objController.delete)
+router.post('/objective',objController.insert)
+router.delete('/objective/:id',objController.delete)
 
 router.post('/okr', okrController.insert)
+// router.get('/okr', okrController.show)
+// router.put('/okr/:id', okrController.update)
 
 
 

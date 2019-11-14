@@ -4,8 +4,10 @@ const todocontroller = {
 	show: async function(ctx, next){
 		let todo = await Todo.all();
 		todo.map(data=>{
-			console.log(data.start_at)
-			data.start_at = formatTime(data.start_at)
+			// data.end_at = formatTime(data.end_at);
+			data.start_at = formatTime(data.start_at);
+
+			console.log(data)
 		})
 		ctx.state.code = 200;
 		ctx.state.data.todos = todo;
@@ -35,6 +37,7 @@ const todocontroller = {
 		let content = ctx.request.body.content;
 		let state = ctx.request.body.state;
 		let end_at = formatTime(new Date());
+		console.log(end_at)
 		let params = {content, state,end_at}
 		let todo = await Todo.update(id,params)
 		ctx.state.code = 200;
